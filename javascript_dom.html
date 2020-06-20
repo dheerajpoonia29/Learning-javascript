@@ -1,0 +1,46 @@
+<!--// LEARNING SOURCE : https://www.w3schools.com/js/js_htmldom.asp -->
+<!-- dom : document object model -->
+<!-- basically : connectivity js with html -->
+<!-- Document Object Model (DOM) is a platform and language-neutral interface that allows programs and scripts to dynamically access and update the content, structure, and style of a document --> 
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>learning js dom html</title>
+</head>
+<body>
+	<p id="id1"></p>
+	<p class="class1"></p>
+	<h6></h6>
+	<button id="btn1">button</button>
+	<script type="text/javascript">
+		// FINDING HTML ELEMENT
+			// direct method
+			document.getElementById('id1').innerHTML = "id1 content";
+			// indirect method 
+			var x = document.getElementsByClassName(
+				"class1");
+			x.innerHTML = "class1 content";
+			console.log(x, typeof(x));
+
+			var allp = document.getElementsByTagName("p");
+			console.log(allp);
+			console.log(allp[0].innerHTML);
+
+			//document.getElementById("myImage").src = "landscape.jpg";
+
+			document.getElementById("id1").style.color = "blue";
+
+		// EVENT LISTENER
+			var button = document.getElementById("btn1");
+			button.addEventListener("click", myfunc); 
+			// ! NOTE : imp 
+			//button.addEventListener("click", myfunc()); 
+			// above call my func at starting of webpage not on click
+			function myfunc(){ 
+				alert("Hello World!"); 
+			}
+
+	</script>
+</body>
+</html>
