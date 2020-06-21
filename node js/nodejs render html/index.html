@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>learning nodejs</title>
+</head>
+<body>
+	<!--form onsubmit="getInput()"-->		
+		<label>NAME</label><br>
+			<input type="text" id="name" name="name" placeholder="enter your name"><br>
+		<label>MOBILE</label><br>
+			<input type="text" name="" placeholder="enter mobile number"><br>
+		<label>SAVE</label><br>
+			<button type="submit" onclick="showInput()">submit</button><br>
+	<!--/form-->
+	<script type="text/javascript">
+		function showInput(){
+			var data = document.getElementById('name').value;
+			alert(data);
+		}		
+	</script>
+</body>
+</html>
