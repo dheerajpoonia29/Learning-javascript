@@ -7,8 +7,10 @@
 // jsVariable()
 // jsDataType()
 // jsString()
+// jsObject()
+jsFunction()
 
-// VARIABLE
+//	VARIABLE
 	function jsVariable(){
 		basic()
 		// usingVar()
@@ -77,9 +79,15 @@
 			//	not re-declare 
 			//	not hoisting	
 		}
+		function usingNothing(){
+			a = ["ram", 21]
+			b = 100
+			console.log(a, typeof a)
+			console.log(b, typeof b)
+		}
 	}
 	
-// DATA TYPE 
+//	DATA TYPE 
 	function jsDataType(){
 		function print(value){
 			console.log('Value: ',value, ' [',typeof value, ']')
@@ -125,7 +133,7 @@
 
 	}
 
-// STRING 
+//	STRING 
 	function jsString(){
 		function print(guide, str){
 			console.log(guide, str)
@@ -138,5 +146,59 @@
 		var date = 18
 		s = `Hello today date = ${date}`
 			print('Backticks: ',s)
+	}
+
+//	ARRAY & OBJECT 
+	function jsObject(){		
+		var arr = ["name", 21]
+		var obj = {firstName:"John", lastName:"Doe", age:50, eyeColor:"blue"};
+		console.log(arr, typeof arr)
+		console.log(obj, typeof obj)
+	}
+
+// 	FUNCTION 
+	function jsFunction(){
+
+		// definition1: traditional way
+			function definition1(param){														// support hoisting 
+				console.log(`function: ${param}`)
+			}
+			definition1("traditional way")
+			console.log("\ttype: ", typeof definition1)
+
+		// definition2: es5 way
+			const definition2 = function(param){										// not suport hoisting 
+				// return "function: "+param
+				return `function: ${param}`
+			}
+			console.log(definition2("es5 way"), "\n\ttype: ", typeof definition2)
+
+		// definition3: es6 way 
+			const definition3 = (param) => {
+				return "function: "+param
+			}
+			console.log(definition3("es6 way"), "\n\ttype: ", typeof definition3)
+
+		// definition4: 
+		
+		// parameter 
+			function fun(a, c="default argu"){
+				return c
+			}
+			console.log("function arguments: ", fun("pass argu"))
+
+		// call by value, call by reference 
+			function callByValue(variable, arr, object){
+				console.log("inside function: ", variable, arr, obj)
+				variable = "variable-update" 
+				arr[0] = "arr-update" 
+				obj.property1 = "object-update"
+			}
+			var variable = "variable-pass"
+			var arr = ["array-pass"]
+			var obj = {property1: "object-pass"}
+			callByValue(variable, arr, obj)
+			console.log("outside function: ", variable, arr, obj)
+		
 	}
 ```
