@@ -1,11 +1,11 @@
 // TESTING 
 // console.log("Hello, World!")
 // jsVariable()
-// jsDataType()
+jsDataType()
 // jsString()
 // jsFunction()
 // jsObject()
-jsArray()
+// jsArray()
 // jsLoops()
 
 //	VARIABLE
@@ -130,7 +130,13 @@ jsArray()
 			let arg = null;	//null is used to assign 'unknown' or 'empty' value to a variable
 				
 				print(audi);  print(user);	print(subject);	print(arg); 
-
+		
+		// Date: 
+			let timeNow = new Date()
+				console.log('date: ', timeNow)
+				console.log('str: ', timeNow.getDate())
+				console.log('str: ', timeNow.getMonth())
+		
 	}
 
 //	STRING 
