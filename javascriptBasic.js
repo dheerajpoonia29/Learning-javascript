@@ -440,8 +440,3 @@ jsArray()
 			// m4()
 			m5()
 	}
-
-// ADVANCE JS 
-	function jsAdvance(){
-		// https://www.programiz.com/javascript/closure
-	}
