@@ -1,15 +1,16 @@
 // TESTING 
 // console.log("Hello, World!")
 // jsVariable()
-jsDataType()
+// jsDataType()
 // jsString()
-// jsFunction()
+// jsFunction()	
 // jsObject()
 // jsArray()
 // jsLoops()
 
 //	VARIABLE
 	function jsVariable(){
+		// Variables created without a declaration keyword (var, let, or const) are always global, even if they are created inside a function.
 		basic()
 		// usingVar()
 		// usingLet()
@@ -204,27 +205,29 @@ jsDataType()
 			function definition1(arg){														// support hoisting 
 				console.log(`function: ${arg}`)
 			}
-			definition1("traditional way")
-			console.log("\ttype: ", typeof definition1)
+			// definition1("traditional way")
+			// console.log("\ttype: ", typeof definition1)
 
 		// definition2: es5 way - anonymous functions
 			const definition2 = function(arg){										// not suport hoisting 
 				// return "function: "+arg
 				return `function: ${arg}`
 			}
-			console.log(definition2("anonymous functions"), "\n\ttype: ", typeof definition2)
+			// console.log(definition2("anonymous functions"), "\n\ttype: ", typeof definition2)
 
 		// definition3: es6 way - anonymous arrow functions
-			const definition3 = (arg) => {
-				return "function: "+arg
-			}
+		// ES5 TO ES6 remove keyword function place => arrow after () paranthesis
+			// const definition3 = (arg) => {
+			// 	return "function: "+arg
+			// }
+			const definition3 = (arg) => ("function: "+arg)    // arrwo function return by-default
 			console.log(definition3("anonymous arrow functions"), "\n\ttype: ", typeof definition3)
 
 		// parameter 
 			function fun(a, c="default argu"){
 				return c
 			}
-			console.log("function arguments: ", fun("pass argu"))
+			// console.log("function arguments: ", fun("pass argu"))
 
 		// call by value, call by reference 
 			function callByValue(variable, arr, object){
@@ -233,15 +236,15 @@ jsDataType()
 				arr[0] = "arr-update" 
 				object.property1 = "object-update"
 			}
-			var variable = "variable-pass"
-			var arr = ["array-pass"]
-			var obj2 = {property1: "object-pass"}
-			callByValue(variable, arr, obj2)
-			console.log("outside function: ", variable, arr, obj2)
+			// var variable = "variable-pass"
+			// var arr = ["array-pass"]
+			// var obj2 = {property1: "object-pass"}
+			// callByValue(variable, arr, obj2)
+			// console.log("outside function: ", variable, arr, obj2)
 		
 		//	confusing loop statement in js 
 			var f = ([a, b] = [1, 2], {x: c} = {x: a + b}) => a + b + c;		//	Destructuring assignment, 
-			console.log("consufion 1: ",f()) 
+			// console.log("consufion 1: ",f()) 
 		
 		//	recursive function 
 			let opStr = ''
@@ -252,7 +255,7 @@ jsDataType()
 					recursion(n-1)
 			}
 			recursion(5)
-			console.log('recursion basic opStr: ', opStr)
+			// console.log('recursion basic opStr: ', opStr)
 
 			function fact(n){
 				if(n==0)
@@ -262,7 +265,7 @@ jsDataType()
 				}
 			}
 			let fact5 = fact(5);
-			console.log('recursion factorial of 5: ', fact5)
+			// console.log('recursion factorial of 5: ', fact5)
 
 		// prototype in function 
 			function jsPrototypeInFunction(){
@@ -287,7 +290,33 @@ jsDataType()
 				dheeraj.greet()
 				neeraj.greet()
 			}
-			jsPrototypeInFunction()
+			// jsPrototypeInFunction()
+
+		// access function method and variable 
+			function mainFun(){
+				console.log('main function called')
+				var name = "dheeraj"
+				function nestedFun(){
+					console.log("nested funtion called")
+				}
+				// nestedFun()     // 1st way 
+				// return nestedFun() // 2nd way 
+			}
+			// mainFun()			// main function called 
+			// var obj = new mainFun()
+			// console.log(obj.name)   // undefined
+			// obj.nestedFun()			// Uncaught TypeError: obj.nestedFun is not a function
+
+			function mainFun2(){
+				console.log('main function called')
+				this.name = "dheeraj";
+			}
+			mainFun2()
+			var obj = new mainFun2()
+			console.log(obj.name)    // dheeraj 
+			// conslusion use this keyword to make member of function variable 
+
+
 	}
 
 //	OBJECT 
