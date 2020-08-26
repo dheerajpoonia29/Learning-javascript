@@ -1,12 +1,15 @@
+import {obj} from './file handling/javascriptFileHandling.js';
 /*
 es6 stands for ecma-script 
 */
+
 // jsJson()
 // jsClass()
 // jsClosures()
 // jsCallBack()
 // jsSyncandASync()
-jsTryCatch()
+// jsTryCatch()
+// TODO: jsFileHandling()
 
 // JSON 
     function jsJson(){
@@ -191,4 +194,25 @@ jsTryCatch()
                 console.log("all fine") // executed line
             }
 
+    }
+
+// FILE HANDLING 
+    function jsFileHandling(){
+        // Manipulation of file handling in JavaScript involves opening of file, closing of file, Updating data in file
+        // all the file handling functions require node Js mandatorily to perform the basic functions which is notpossible using normal web browser and html files.
+        // the functionality of each of the manipulations of the file system module of the Node.js which helps in the file handling functions of JavaScript
+        // require() method is used to include the files using the node.js feature for file handling.
+        console.log("filehandling: start")
+        // var fs = require (‘fs’)    // nodejs file system module        // SyntaxError: illegal character
+        
+
+        // var http = require('http');   // ReferenceError: require is not defined
+        // var fs = require('fs');
+
+        // why error come
+            // reason : require() is not a valid function in client side javascript
+            // require is server side nodejs 
+        
+        // how to call js file into other js file
+        // TODO: call method from file-handling/javascriptFileHandling.js
     }

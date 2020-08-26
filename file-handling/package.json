@@ -1,0 +1,14 @@
+{
+  "name": "file-handling",
+  "version": "1.0.0",
+  "description": "testing file handling ",
+  "main": "javascriptFileHandling.js",
+  "scripts": {
+    "start": "nodemon javascriptFileHandling.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "nodemon": "^2.0.4"
+  }
+}
